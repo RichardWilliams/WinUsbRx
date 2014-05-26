@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B73409F4-40DD-4182-BD1C-E37EBA9230A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinUsbRx</RootNamespace>
+    <AssemblyName>WinUsbRx</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.2.2\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Tasks.v4.0" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Factory">
+      <HintPath>..\packages\Ninject.Extensions.Factory.3.2.0.0\lib\net45-full\Ninject.Extensions.Factory.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Rx-Core.2.2.2\lib\net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\Rx-Interfaces.2.2.2\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Rx-Linq.2.2.2\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\packages\Rx-PlatformServices.2.2.2\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\DeviceManagement\DeviceManagementForInterfaceDetails.cs" />
+    <Compile Include="Core\DeviceManagement\IDeviceManagementForInterfaceDetails.cs" />
+    <Compile Include="Core\DeviceManagement\Ninject\DeviceManagementModule.cs" />
+    <Compile Include="Core\DeviceManagement\UnsafeNative\DeviceInterfaceData.cs" />
+    <Compile Include="Core\DeviceMonitoring\IBroadcastDeviceInterfaceFactory.cs" />
+    <Compile Include="Core\DeviceMonitoring\UnsafeNativeMethods\IUnsafeNativeMethodsWrapper.cs" />
+    <Compile Include="Core\DeviceMonitoring\UnsafeNativeMethods\UnsafeNativeMethods.cs" />
+    <Compile Include="Core\DeviceMonitoring\UnsafeNativeMethods\UnsafeNativeMethodsWrapper.cs" />
+    <Compile Include="Core\IUsbDevice.cs" />
+    <Compile Include="Core\IUsbDeviceFactory.cs" />
+    <Compile Include="Core\IUsbDevices.cs" />
+    <Compile Include="Core\UsbDevice.cs" />
+    <Compile Include="Core\UsbDevices.cs" />
+    <Compile Include="Core\DeviceMonitoring\Handle\IProcesHandleResultFactory.cs" />
+    <Compile Include="Core\DeviceMonitoring\Handle\CreatedHandle.cs" />
+    <Compile Include="Core\DeviceMonitoring\Handle\DestroyedHandle.cs" />
+    <Compile Include="Core\DeviceMonitoring\DeviceNotifications.cs" />
+    <Compile Include="Core\DeviceMonitoring\Handle\IProcessHandleResult.cs" />
+    <Compile Include="Core\DeviceMonitoring\Handle\ProcessHandleResult.cs" />
+    <Compile Include="Core\DeviceMonitoring\IDeviceNotifications.cs" />
+    <Compile Include="Core\DeviceMonitoring\Handle\IHandle.cs" />
+    <Compile Include="Core\DeviceMonitoring\Handle\IHandleFactory.cs" />
+    <Compile Include="Core\DeviceMonitoring\UsbDeviceNotifications\IUsbDeviceNotification.cs" />
+    <Compile Include="Core\DeviceMonitoring\UsbDeviceNotifications\IUsbDeviceNotificationFactory.cs" />
+    <Compile Include="Core\DeviceMonitoring\IUsbDeviceWatcher.cs" />
+    <Compile Include="Core\DeviceMonitoring\IUsbForm.cs" />
+    <Compile Include="Core\DeviceMonitoring\Ninject\DeviceMonitoringModule.cs" />
+    <Compile Include="Ninject\GuidModule.cs" />
+    <Compile Include="Wrappers\WrappersModule.cs" />
+    <Compile Include="Core\DeviceManagement\DeviceProperties\BaseDeviceProperty.cs" />
+    <Compile Include="Core\DeviceManagement\DeviceProperties\DeviceMultiStringProperty.cs" />
+    <Compile Include="Core\DeviceManagement\DeviceProperties\DeviceNullProperty.cs" />
+    <Compile Include="Core\DeviceManagement\DeviceProperties\DevicePropertyFactory.cs" />
+    <Compile Include="Core\DeviceManagement\DeviceProperties\DeviceStringProperty.cs" />
+    <Compile Include="Core\DeviceManagement\DeviceProperties\IDevicePropertyFactory.cs" />
+    <Compile Include="Core\DeviceManagement\DeviceInformationElement.cs" />
+    <Compile Include="Core\DeviceManagement\DeviceInformationGetClassFlags.cs" />
+    <Compile Include="Core\DeviceManagement\DeviceInformationSet.cs" />
+    <Compile Include="Core\DeviceManagement\DeviceInterface.cs" />
+    <Compile Include="Core\DeviceManagement\DeviceInterfaceDetail.cs" />
+    <Compile Include="Core\DeviceManagement\Factory\IDeviceInfoDataFactory.cs" />
+    <Compile Include="Core\DeviceManagement\Factory\IDeviceInformationElementFactory.cs" />
+    <Compile Include="Core\DeviceManagement\Factory\IDeviceInterfaceDataFactory.cs" />
+    <Compile Include="Core\DeviceManagement\Factory\IDeviceInterfaceDetailFactory.cs" />
+    <Compile Include="Core\DeviceManagement\Factory\IDeviceInterfaceFactory.cs" />
+    <Compile Include="Core\DeviceManagement\IDeviceInterfaceDetail.cs" />
+    <Compile Include="Core\DeviceManagement\NullDeviceInterfaceDetail.cs" />
+    <Compile Include="Core\DeviceManagement\UnsafeNative\RegistryType.cs" />
+    <Compile Include="Core\DeviceManagement\UnsafeNative\Spdrp.cs" />
+    <Compile Include="Core\DeviceMonitoring\BroadcastDeviceInterface.cs" />
+    <Compile Include="Core\DeviceMonitoring\BroadcastHdr.cs" />
+    <Compile Include="Core\DeviceManagement\UnsafeNative\IUnsafeNativeMethodsWrapper.cs" />
+    <Compile Include="Core\DeviceManagement\UnsafeNative\DeviceInfoData.cs" />
+    <Compile Include="Core\DeviceManagement\UnsafeNative\UnsafeNativeMethods.cs" />
+    <Compile Include="Core\DeviceMonitoring\UsbDeviceNotifications\UsbDeviceNotification.cs" />
+    <Compile Include="Core\DeviceMonitoring\UsbDeviceWatcher.cs" />
+    <Compile Include="Core\DeviceMonitoring\UsbForm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\DeviceManagement\UnsafeNative\UnsafeNativeMethodsWrapper.cs" />
+    <Compile Include="Core\DeviceManagement\UnsafeNative\UsbFileHandle.cs" />
+    <Compile Include="Wrappers\IMarshalWrapper.cs" />
+    <Compile Include="Wrappers\MarshalWrapper.cs" />
+    <Compile Include="Wrappers\Win32ErrorWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

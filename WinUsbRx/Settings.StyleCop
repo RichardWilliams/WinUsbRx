@@ -1,0 +1,23 @@
+<StyleCopSettings Version="105">
+  <GlobalSettings>
+    <CollectionProperty Name="RecognizedWords">
+      <Value>alloc</Value>
+      <Value>dbt</Value>
+      <Value>devtype</Value>
+      <Value>desc</Value>
+      <Value>digcf</Value>
+      <Value>dll</Value>
+	  <Value>guid</Value>
+      <Value>mfg</Value>
+      <Value>ninject</Value>
+      <Value>notifier</Value>
+      <Value>pinvoked</Value>
+      <Value>Proc</Value>
+      <Value>Spdrp</Value>
+      <Value>synchronisation</Value>
+      <Value>usb</Value>
+      <Value>WndProc</Value>
+      <Value>Wnd</Value>
+    </CollectionProperty>
+  </GlobalSettings>
+</StyleCopSettings>
