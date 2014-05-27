@@ -71,7 +71,6 @@
     <Compile Include="Core\UsbDevicesTests.cs" />
     <Compile Include="Core\DeviceMonitoring\Handle\CreateHandleTests.cs" />
     <Compile Include="Core\DeviceMonitoring\Handle\DestroyHandleTests.cs" />
-    <Compile Include="GeneralTests.cs" />
     <Compile Include="Core\DeviceMonitoring\Handle\ProcessHandleResultsTests.cs" />
     <Compile Include="Core\DeviceMonitoring\UsbFormTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
